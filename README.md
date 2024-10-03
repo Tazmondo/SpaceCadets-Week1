@@ -15,3 +15,7 @@ Most students do not have pages, so it will only work for members of staff.
 `lune run peekinfo dem`
 
 `lune run peekinfo dem@soton.ac.uk`
+
+`lune run fetchinfo dem`
+
+etc

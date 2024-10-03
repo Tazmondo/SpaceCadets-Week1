@@ -1,6 +1,7 @@
 # What does it do
 
-Running the program opens up the information page for the given person.
+Running the peekinfo opens up the information page for the given person.
+Running fetchinfo will download the page instead, find their name, and print it.
 
 Most students do not have pages, so it will only work for members of staff.
 

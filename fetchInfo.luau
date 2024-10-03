@@ -23,24 +23,19 @@ local function extractNameFromHTML(html: string): string?
 	return name.text
 end
 
-local args = process.args
-local email = args[1]
+local email = process.args[1]
 
 if not email then
 	error("Must provide an email")
 end
 
-local user = extractUser(email)
-local url = generateUrl(user)
-
-local response = net.request(url)
+local response = net.request(generateUrl(extractUser(email)))
 
 if response.statusCode ~= 200 then
 	error(`Response was not OK. Status code: {response.statusCode} {response.statusMessage}`)
 end
 
-local body = response.body
-local name = extractNameFromHTML(body)
+local name = extractNameFromHTML(response.body)
 if name then
 	print(`Found name: {name}`)
 else

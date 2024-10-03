@@ -2,7 +2,7 @@ local process = require("@lune/process")
 local fs = require("@lune/fs")
 local task = require("@lune/task")
 
-local extractName = require("extractName")
+local extractUser = require("extractUser")
 
 local TEMP_FILE_NAME = "tempopen.html"
 local FILE_CONTENTS_TEMPLATE = "<script>location.href='https://www.ecs.soton.ac.uk/people/%s'</script>"
@@ -14,7 +14,7 @@ if not email then
 	error("Must provide an email")
 end
 
-local name = extractName(email)
+local name = extractUser(email)
 
 -- create an html file to open
 -- the script in the file will automatically redirect to our web page

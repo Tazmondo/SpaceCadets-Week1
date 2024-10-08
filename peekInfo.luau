@@ -26,4 +26,4 @@ process.spawn("powershell", { "Invoke-Item ./tempopen.html" })
 
 -- allow time for the browser to read the file data, and then clean it up
 task.wait(1)
-fs.removeFile("tempopen.html")
+fs.removeFile(TEMP_FILE_NAME)

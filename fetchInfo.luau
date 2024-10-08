@@ -9,7 +9,7 @@ local function generateUrl(name: string)
 end
 
 local function extractNameFromHTML(html: string): string?
-	local re = regex.new('<meta property="og:title" content="(David Edward Millard)" />')
+	local re = regex.new('<meta property="og:title" content="(.*)" />')
 	local caps = re:captures(html)
 	if not caps then
 		return nil
